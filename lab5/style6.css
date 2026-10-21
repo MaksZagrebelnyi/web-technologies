@@ -1,0 +1,78 @@
+body {
+    background-color: #1b2a41;                 /* запасний колір, поки вантажиться картинка */
+    background-image: url('/.idea/img/fon.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;              /* фон нерухомий при прокручуванні */
+}
+
+/* Коли вікно вужче за 320px, контейнер не стискається нижче min-width,
+   тому він виходить за межі вікна і з'являється горизонтальна прокрутка. */
+main {
+    box-sizing: border-box;
+    max-width: 900px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------- Теги (display) ---------- */
+/* width і height не діють, бо для рядкових (inline) елементів
+   ширина й висота визначаються лише вмістом. */
+div {
+    display: inline;
+    width: 200px;
+    height: 100px;
+}
+
+/* Блокові span займають окремі рядки, тут width працює. */
+span {
+    display: block;
+    width: 150px;
+}
+
+/* ---------- Повторення фону ---------- */
+.rep {
+    height: 200px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    background-image: url('/.idea/img/lev.jpg');
+}
+
+.repeat-x { background-repeat: repeat-x; }
+.repeat-y { background-repeat: repeat-y; }
+
+.space { background-repeat: space; }
+.round { background-repeat: round; }
+
+/* ---------- Масштабування ---------- */
+.size {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    border: 2px solid black;
+    background-image: url('/.idea/img/fon.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.contain { background-size: contain; }
+.cover   { background-size: cover; }
+
+/* ---------- Прокручування фону ---------- */
+/* scroll: фон прив'язаний до самого блоку і лишається на місці,
+   коли вміст усередині блоку прокручують.
+   local: фон прив'язаний до вмісту і прокручується разом із ним. */
+.att {
+    max-height: 150px;
+    overflow: auto;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    background-image: url('/.idea/img/lev.png');
+}
+
+.scroll { background-attachment: scroll; }
+.local  { background-attachment: local; }

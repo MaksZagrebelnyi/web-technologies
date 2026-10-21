@@ -1,0 +1,28 @@
+table {
+    width: 800px;
+    background-color: white;   /* білий фон видно в проміжках cellspacing */
+    font-size: 22px;
+}
+
+th, td {
+    padding: 20px 10px;
+}
+
+thead th {
+    color: white;
+}
+thead th:nth-child(1) { background-color: rgb(235, 225, 242); font-size: 18px; }
+thead th:nth-child(2) { background-color: rgb(205, 180, 225); }
+thead th:nth-child(3) { background-color: rgb(165, 125, 195); }
+thead th:nth-child(4) { background-color: rgb(110, 60, 150); }
+thead th:nth-child(5) { background-color: rgb(65, 30, 95); }
+
+tbody th {
+
+    background-color: rgb(130, 80, 170);
+    color: white;
+    font-weight: normal;
+}
+
+tbody tr:nth-child(odd) td  { background-color: rgb(205, 180, 225); }
+tbody tr:nth-child(even) td { background-color: rgb(235, 225, 242); }

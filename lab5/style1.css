@@ -1,0 +1,67 @@
+div {
+    background-color: rgb(255, 165, 0);
+    width: 500px;
+    padding: 20px;
+    color: white;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 900;
+    margin: 0 0 10px 0;
+}
+
+/* Загальні вимоги до списків */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none inside;          /* маркер всередині, стандартний вимкнено */
+}
+
+li {
+    background-repeat: no-repeat;     /* маркер-зображення */
+    background-size: 24px 24px;
+}
+
+/* Список 1-го рівня */
+.list > li {
+    background-color: rgb(103, 158, 128);
+    padding-right: 20px;
+    padding-left: 50px;
+    background-position: 10px 10px;
+    margin-bottom: 5px;
+}
+
+/* Список 2-го рівня */
+.list ul li {
+    font-size: 18px;
+    font-style: italic;
+    background-color: rgb(153, 180, 102);
+    margin-bottom: 10px;
+    padding-left: 40px;
+    background-position: 8px center;
+}
+
+/* span (загальне) */
+span {
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+/* span 1-го рівня */
+.list > li > span {
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(199, 124, 106);
+    margin-bottom: 10px;
+}
+
+/* span 2-го рівня */
+.list ul span {
+    background-color: rgb(218, 106, 32);
+}
+
+/* Іконки (назви файлів підстав свої з папки icons) */
+.list > li.checklist { background-image: url('/.idea/photos/rule.png'); }
+.hotel    { background-image: url('/.idea/photos/hotel.png'); }
+.festival { background-image: url('/.idea/photos/festival.png'); }

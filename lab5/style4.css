@@ -1,0 +1,42 @@
+div {
+    display: inline-block;
+    box-sizing: border-box;   /* щоб блок був рівно 300x200 разом із padding */
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 1: діагональні смуги двох відтінків */
+div:nth-of-type(1) {
+    background: linear-gradient(45deg, rgb(30, 90, 160) 50%, rgb(70, 140, 210) 50%);
+    background-size: 40px 40px;
+}
+
+/* 2: клітинки з двох градієнтів, один напівпрозорий */
+div:nth-of-type(2) {
+    background-color: rgb(190, 220, 245);
+    background-image:
+            linear-gradient(transparent 50%, rgba(20, 70, 140, 0.3) 50%),
+            linear-gradient(90deg, rgba(20, 70, 140, 0.3) 50%, transparent 50%);
+    background-size: 40px 40px;
+    color: rgb(20, 60, 120);
+}
+
+/* 3: радіальний градієнт */
+div:nth-of-type(3) {
+    background: radial-gradient(circle farthest-corner at 30px 20px,
+    rgb(190, 225, 250) 0%, rgb(70, 140, 210) 50%, rgb(15, 50, 110) 100%);
+}
+
+/* 4: напівпрозорий градієнт поверх кольору, притиснутий донизу */
+div:nth-of-type(4) {
+    background-color: rgb(70, 140, 210);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 50%;
+}

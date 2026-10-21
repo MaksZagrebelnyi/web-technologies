@@ -1,0 +1,55 @@
+/* ---------- 1. box-sizing ---------- */
+.box {
+    display: inline-block;
+    width: 300px;
+    padding: 20px;
+    border: 5px solid rgb(30, 90, 160);
+    background-color: rgb(190, 220, 245);
+    margin: 20px;
+}
+
+.content { box-sizing: content-box; }   /* 300 + 2*20 + 2*5 = 350px */
+.border  { box-sizing: border-box; }    /* 300px */
+
+/* ---------- 2. overflow ---------- */
+.over {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    max-height: 80px;
+    border: 2px solid black;
+    margin: 20px;
+}
+
+.visible { overflow: visible; }
+.hidden  { overflow: hidden; }
+.scroll  { overflow: scroll; }
+.auto    { overflow: auto; }
+
+/* ---------- 3. display ---------- */
+ul {
+    list-style: none;          /* ховаємо маркери */
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+}
+
+li a {
+    display: block;
+    padding: 10px 20px;
+    background-color: rgb(30, 90, 160);
+    color: white;
+    text-decoration: none;
+}
+
+/* Приховуємо пункт "Блог".
+   display: none повністю прибирає елемент з документа: він не займає місця
+   і сусідні пункти зсуваються.
+   visibility: hidden та opacity: 0 лише роблять елемент невидимим,
+   а місце під нього лишається порожнім. */
+li:nth-child(4) {
+    display: none;
+}
