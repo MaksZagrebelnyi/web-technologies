@@ -1,0 +1,17 @@
+*{font-family: Arial, sans-serif;
+    font-size: 20px;
+    letter-spacing: 40px;}
+p{color: green;
+    text-align : center;}
+div{text-align : justify}
+.rd{color: red}
+.nw{white-space: nowrap}
+#bi {
+    font-style: italic;
+    font-weight: bold;}
+.sw{text-shadow: 5px -5px 3px blue }
+.pur{text-decoration: line-through;
+    text-transform: uppercase;
+    text-indent: 50px;}
+.ws{letter-spacing: 30px;
+    word-spacing: 50px;}

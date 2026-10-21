@@ -1,0 +1,29 @@
+
+a {
+    color: purple;
+}
+.ag {
+    color: green;
+}
+.ul1 {
+    list-style-type: disc;
+}
+.ul2 {
+    list-style-type: circle;
+    list-style-position: inside;
+}
+ol {list-style-position: inside;
+    margin-left: -40px
+}
+.kv {
+    list-style-type: square;
+}
+.pic {
+    list-style-image: url("imgonline-com-ua-Resize-ZnyuT2Ilm5Firy7.jpg");
+}
+ul li ul {
+    list-style-type: none;
+}
+.kv a {
+    text-decoration: none;
+}
