@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding-top: 48px;           /* місце під fixed-панель, яка висить поверх сторінки */
+    font-family: Arial, sans-serif;
+}
+
+/* ---------- Спільне для обох панелей ---------- */
+.menu, .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu:after {                    /* clearfix: пункти плаваючі */
+    content: '';
+    display: block;
+    clear: both;
+}
+.menu li {
+    position: relative;          /* опора для випадних підменю */
+}
+.menu > li {
+    float: left;                 /* пункти першого рівня в ряд */
+}
+.menu > li.last {
+    float: right;                /* останній пункт праворуч */
+}
+.menu a {
+    display: block;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+.menu a:hover {
+    background-color: #4caf50;   /* зміна вигляду при наведенні */
+}
+.menu li.active > a {
+    background-color: #4caf50;   /* поточний пункт */
+}
+
+/* ---------- Випадні підменю ---------- */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;                   /* під пунктом */
+    left: 0;
+    width: 200px;
+    background-color: #444;
+}
+.submenu .submenu {              /* третій рівень виїжджає вправо */
+    top: 0;
+    left: 100%;
+}
+.menu li:hover > .submenu {
+    display: block;
+}
+.last > .submenu {               /* підменю крайнього пункту відкривається вліво */
+    left: auto;
+    right: 0;
+}
+.last .submenu .submenu {        /* вкладене підменю там також вліво */
+    left: auto;
+    right: 100%;
+}
+
+/* ---------- 1. Fixed-панель значків ---------- */
+.nav-fixed {
+    position: fixed;             /* зафіксована зверху вікна */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #555;
+    z-index: 20;
+}
+.nav-fixed .menu > li {
+    width: 100px;
+}
+.material-icons {
+    display: block;              /* щоб висота пункту була рівно 24px + padding */
+}
+
+/* ---------- Баннер ---------- */
+.banner {
+    height: 200px;
+    background-color: #ddd;
+    text-align: center;
+    line-height: 200px;
+    font-size: 32px;
+}
+
+/* ---------- 2. Sticky-панель ---------- */
+.nav-sticky {
+    position: sticky;            /* спочатку в потоці, потім прилипає */
+    top: 48px;                   /* прилипає під fixed-панеллю (її висота 48px) */
+    background-color: #2e7d32;
+    z-index: 10;                 /* нижче за fixed-панель */
+}
+.nav-sticky .menu > li {
+    width: 120px;
+}
+.nav-sticky .submenu {
+    background-color: #1b5e20;
+}
+
+/* ---------- Вміст ---------- */
+.content {
+    padding: 20px;
+    height: 2000px;              /* довга сторінка для перевірки прокручування */
+}

@@ -1,0 +1,181 @@
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+}
+
+/* ---------- Верхня панель ---------- */
+.header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 20px;
+	padding: 10px 20px;
+}
+
+.header-link {
+	color: #555;
+	text-decoration: none;
+	font-size: 14px;
+	padding: 4px;
+}
+.header-link:hover {
+	text-decoration: underline;
+}
+.header-link:focus {
+	outline: 2px solid #8ab4f8;
+}
+
+.avatar {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: #888;
+}
+.avatar:hover {
+	box-shadow: 0 0 0 3px #ccc;
+}
+.avatar:focus {
+	outline: 2px solid #8ab4f8;
+}
+
+/* ---------- Кнопка попапу ---------- */
+.menu {
+
+	position: relative;              /* опора для попапу */
+}
+
+.popup-button {
+	appearance: none;                /* прибираємо вигляд стандартного чекбокса */
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin: 0;
+	box-sizing: border-box;
+	padding: 5px;
+	border: 2px solid transparent;
+	border-radius: 4px;
+	cursor: pointer;
+	/* сітка 3x3 крапки без картинок */
+	background-image: radial-gradient(circle, #666 2px, transparent 2.5px);
+	background-size: 6px 6px;
+	background-origin: content-box;
+	background-clip: content-box;
+}
+.popup-button:hover {
+	background-color: #eee;
+}
+.popup-button:focus {
+	outline: none;
+	border-color: #8ab4f8;
+}
+
+/* ---------- Попап ---------- */
+.popup {
+	position: absolute;
+	top: 45px;
+	right: -70px;
+	width: 320px;
+	background-color: white;
+	border: 1px solid #ccc;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+	visibility: hidden;              /* початковий стан: не видно і не фокусується */
+}
+/* стан «відкрито» */
+.popup-button:checked + .popup {
+	visibility: visible;
+}
+
+/* ---------- Прокручуваний вміст ---------- */
+.popup-body {
+	max-height: 380px;
+	overflow-y: auto;                /* з'являється смуга прокрутки */
+}
+.popup-body:focus {
+	outline: 2px solid #8ab4f8;
+	outline-offset: -2px;
+}
+
+.apps {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	padding: 20px;
+}
+
+/* ---------- Іконка-посилання ---------- */
+.app {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 12px 4px;
+	border: 1px solid transparent;
+	color: #555;
+	font-size: 14px;
+	text-decoration: none;
+}
+.app-icon {
+	font-size: 40px;
+	margin-bottom: 8px;
+}
+.app:hover {
+	border-color: #ddd;              /* сіра рамка при наведенні */
+}
+.app:focus {
+	outline: none;
+	border-color: #8ab4f8;           /* синя рамка при фокусі */
+}
+
+/* ---------- Додаткові іконки ---------- */
+.apps-extra {
+	display: none;                   /* спочатку сховані */
+	border-top: 1px solid #ddd;
+}
+/* якщо чекбокс More увімкнено, показуємо додаткові іконки */
+.popup:has(.more-toggle:checked) .apps-extra {
+	display: grid;
+}
+
+.even-more {
+	grid-column: 1 / 4;              /* на всю ширину сітки */
+	text-align: center;
+	padding: 12px;
+	color: #555;
+	font-size: 14px;
+	text-decoration: none;
+}
+.even-more:hover {
+	background-color: #eee;
+}
+.even-more:focus {
+	outline: 2px solid #8ab4f8;
+}
+
+/* ---------- Кнопка More ---------- */
+.more-toggle {
+	position: absolute;              /* ховаємо, але лишаємо фокусованим */
+	opacity: 0;
+	left: 0;
+	bottom: 0;
+	width: 1px;
+	height: 1px;
+}
+.more-button {
+	display: block;
+	padding: 12px;
+	background-color: #f3f3f3;
+	color: #555;
+	font-size: 14px;
+	text-align: center;
+	cursor: pointer;
+}
+.more-button:hover {
+	background-color: #e3e3e3;
+}
+.more-toggle:focus + .more-button {
+	outline: 2px solid #8ab4f8;
+	outline-offset: -2px;
+}
+/* після розкриття кнопка More зникає */
+.popup:has(.more-toggle:checked) .more-button {
+	display: none;
+}

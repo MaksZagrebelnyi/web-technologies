@@ -1,0 +1,47 @@
+
+.block, .block1, .block2 {
+    position: absolute;
+    box-sizing: border-box;        /* ширина й висота включають рамку */
+    border: 2px solid black;
+    font-size: 22px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/* зелений блок: найнижчий шар */
+.block {
+    top: 75px;
+    left: 15px;
+    width: 270px;
+    height: 125px;
+    background-color: #00b050;
+    color: black;
+    z-index: 0;
+
+    line-height:125px;
+}
+
+/* верхній синій блок */
+.block1 {
+    top: 8px;
+    left: 260px;
+    width: 290px;
+    height: 110px;
+    background-color: #4a86d8;
+    color: white;
+    z-index: 1;
+    line-height:110px;
+    }
+
+/* нижній синій блок */
+.block2 {
+    top: 165px;
+    left: 260px;
+    width: 310px;
+    height: 110px;
+    background-color: #4a86d8;
+    color: white;
+    z-index: 1;
+    line-height:110px;
+}

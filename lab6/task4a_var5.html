@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Горизонтальна навігація</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style45.css">
+</head>
+<body>
+
+<!-- 1. Фіксована панель значків -->
+<nav class="nav-fixed">
+    <ul class="menu">
+        <li class="active">
+            <a href="#"><span class="material-icons">home</span></a>
+        </li>
+        <li>
+            <a href="#"><span class="material-icons">search</span></a>
+            <ul class="submenu">
+                <li><a href="#">Пошук по сайту</a></li>
+                <li>
+                    <a href="#">Розширений пошук</a>
+                    <ul class="submenu">
+                        <li><a href="#">За датою</a></li>
+                        <li><a href="#">За автором</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="last">
+            <a href="#"><span class="material-icons">mail</span></a>
+            <ul class="submenu">
+                <li><a href="#">Написати лист</a></li>
+                <li><a href="#">Вхідні</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<!-- Баннер: прокручується вгору, а sticky-панель за ним прилипне -->
+<header class="banner"> </header>
+
+<!-- 2. «Липка» панель меню -->
+<nav class="nav-sticky">
+    <ul class="menu">
+        <li class="active"><a href="#">Головна</a></li>
+        <li>
+            <a href="#">Новини</a>
+            <ul class="submenu">
+                <li><a href="#">Світ</a></li>
+                <li>
+                    <a href="#">Україна</a>
+                    <ul class="submenu">
+                        <li><a href="#">Київ</a></li>
+                        <li><a href="#">Львів</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">Контакти</a></li>
+        <li class="last"><a href="#">Про нас</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    <h1>Текст сторінки</h1>
+    <p>Прокрутіть сторінку: верхня панель значків стоїть на місці (fixed), а друга панель прилипає під нею (sticky).</p>
+</div>
+
+</body>
+</html>

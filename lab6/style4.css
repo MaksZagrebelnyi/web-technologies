@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    margin-left: 220px;      /* звільняємо місце під панель */
+    padding: 20px;
+}
+
+.menu, .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- Панель на всю висоту ---------- */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100%;            /* повна висота */
+    background-color: #0069b4;
+}
+
+.menu li {
+    position: relative;      /* опора для підменю */
+    border-bottom: 1px solid #6bb5e8;
+}
+
+.menu a {
+    display: block;
+    padding: 14px 16px;
+    color: white;
+    text-decoration: none;
+}
+.menu a:hover {
+    background-color: #0a84d6;
+}
+.menu li.active > a {
+    background-color: #004a80;   /* поточний пункт */
+}
+
+/* піктограма поруч із текстом */
+.material-icons {
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+/* ---------- Підменю (2-й і 3-й рівні) ---------- */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 0;                  /* на рівні батьківського пункту */
+    left: 100%;              /* праворуч від нього */
+    width: 200px;
+    background-color: #0069b4;
+}
+.menu li:hover > .submenu {
+    display: block;
+}
