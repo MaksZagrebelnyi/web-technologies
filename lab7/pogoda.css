@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+    color: #444;
+    background: #fff;
+}
+
+/* Контейнер-віджет */
+.pogoda {
+    display: flex;
+    flex-direction: column;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 6px;
+}
+
+/* ---------- Поточна погода ---------- */
+.current {
+    padding: 10px 10px 20px;
+}
+
+.current__city {
+    margin: 0 0 8px;
+    font-size: 44px;
+    font-weight: 400;
+}
+
+.current__date,
+.current__state {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Рядок: зліва іконка + температура, справа деталі */
+.current__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 6px;
+}
+
+.current__main {
+    display: flex;
+    align-items: flex-start;
+}
+
+.current__icon {
+    width: 60px;
+    margin-right: 14px;
+}
+
+.current__temp {
+    font-size: 56px;
+    line-height: 1.1;
+}
+
+.current__unit {
+    margin-top: 6px;
+    font-size: 16px;
+    color: #888;
+}
+
+.current__details {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.current__details span {
+    color: #888;
+}
+
+/* ---------- Прогноз ---------- */
+.forecast {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+}
+
+.day {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    border-top: 1px solid #ccc;
+    padding: 0 20px;
+}
+
+/* Чотири колонки з фіксованою пропорцією */
+.day__name   { flex: 1.6; font-weight: bold; font-size: 17px; }
+.day__icon   { flex: 1.2; display: flex; justify-content: center; }
+.day__temp   { flex: 1;   display: flex; flex-direction: column; }
+.day__pollen { flex: 1.2; text-align: right; color: #555; }
+
+.day__pollen span {
+    color: #888;
+}
+
+.day__icon img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.hi { color: #333; }
+.lo { color: #888; }
