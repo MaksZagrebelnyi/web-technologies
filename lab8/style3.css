@@ -1,0 +1,112 @@
+/* скидання стилів */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #fff7f7;
+    --block-color: white;
+    --accent-color: tomato;
+    --gap: 15px;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: var(--gap);
+}
+
+/* mobile: одна колонка, блоки йдуть один під одним у порядку HTML */
+.page {
+    display: grid;
+    gap: var(--gap);
+    min-height: 100vh;
+}
+
+.page > * {
+    background-color: var(--block-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.main {
+    min-height: 250px;
+}
+
+/* tablet: 2 колонки (вузька + широка) */
+@media (min-width: 768px) {
+    .page {
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto 1fr auto;
+    }
+
+    .header {
+        grid-column: 1 / -1;  /* від першої до останньої лінії */
+        grid-row: 1;
+    }
+
+    .nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .sidebar {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .main {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .ads {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .footer {
+        grid-column: 2;
+        grid-row: 4;
+    }
+}
+
+/* desktop: 3 колонки (sidebar, центр, ads) */
+@media (min-width: 1024px) {
+    .page {
+        grid-template-columns: 1fr 4fr 1fr;
+    }
+
+    .header {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .sidebar {
+        grid-column: 1;
+        grid-row: 2 / 4;      /* займає 2 рядки: від лінії 2 до лінії 4 */
+    }
+
+    .nav {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .main {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .ads {
+        grid-column: 3;
+        grid-row: 2 / 4;
+    }
+
+    .footer {
+        grid-column: 1 / -1;
+        grid-row: 4;
+    }
+}
